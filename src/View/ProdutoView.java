@@ -5,6 +5,9 @@
  */
 package View;
 
+import Controller.ProdutoController;
+import Model.Produto;
+
 /**
  *
  * @author Aluno
@@ -81,6 +84,11 @@ public class ProdutoView extends javax.swing.JFrame {
         btnNovo.setText("Novo");
 
         btnSalvar.setText("Salvar");
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
+            }
+        });
 
         btnExcluir.setText("Excluir");
 
@@ -159,6 +167,24 @@ public class ProdutoView extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        long codigo = Long.parseLong(txtCodigo.getText());
+        String nome = txtNome.getText();
+        String descricao = txtDescricao.getText();
+        double preco = Double.parseDouble(txtPreco.getText().replace(',', '.'));
+        int estoque = Integer.parseInt(txtEstoque.getText());
+        
+        Produto produto = new Produto();
+        produto.setCodigo(codigo);
+        produto.setNome(nome);
+        produto.setDescricao(descricao);
+        produto.setPreco(preco);
+        produto.setQtde(estoque);
+        
+        ProdutoController pc = new ProdutoController();
+        pc.Salvar(produto);
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments

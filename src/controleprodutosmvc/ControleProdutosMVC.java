@@ -5,6 +5,8 @@
  */
 package controleprodutosmvc;
 
+import View.ProdutoView;
+
 /**
  *
  * @author Aluno
@@ -15,7 +17,8 @@ public class ControleProdutosMVC {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ProdutoView pv = new ProdutoView();
+        pv.show();
     }
     
 }
