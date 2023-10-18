@@ -14,9 +14,9 @@ import Model.Produto;
  */
 public class ProdutoController {
 
-    public void Salvar(Produto produto) {
+    public boolean Salvar(Produto produto) {
         ProdutoDAO prodDAO = new ProdutoDAO();
-        prodDAO.salvar(produto);
+        return prodDAO.salvar(produto);
     }
     
 }

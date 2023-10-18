@@ -32,9 +32,9 @@ public class ProdutoDAO {
             stm.setString(3, produto.getDescricao());
             stm.setDouble(4, produto.getPreco());
             stm.setInt(5, produto.getQtde());
-            if(stm.execute()){
+            stm.execute();
                 return true;
-            }
+            
         }catch(SQLException ex){
             JOptionPane.showMessageDialog(null, ex.getMessage());
         }

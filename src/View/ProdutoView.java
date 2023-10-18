@@ -7,6 +7,7 @@ package View;
 
 import Controller.ProdutoController;
 import Model.Produto;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -183,7 +184,10 @@ public class ProdutoView extends javax.swing.JFrame {
         produto.setQtde(estoque);
         
         ProdutoController pc = new ProdutoController();
-        pc.Salvar(produto);
+        if(pc.Salvar(produto)){
+            JOptionPane.showMessageDialog(null, 
+                    "Cadastro realizado com sucesso!");
+        }
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
